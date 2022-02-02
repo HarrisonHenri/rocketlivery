@@ -1,0 +1,19 @@
+version: "3"
+
+services:  
+  rocketlivery_db:
+    image: postgres
+    container_name: rocketlivery_db
+    restart: always
+    ports: 
+      - 5432:5432 
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=rocketlivery
+    volumes: 
+      - pgdata:/data/postgres
+
+volumes: 
+  pgdata: 
+    driver: local
